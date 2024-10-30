@@ -26,11 +26,12 @@ defineProps({
 </script>
 
 <template>
-    <svg :style="$attrs.style" :class="$attrs.class">
-      <use :href="prefix + name" :fill="color"></use>
+    <svg :style="$attrs.style" :class="$attrs.class" aria-hidden="true" width="1em" height="1em">
+      <use :href="prefix + name" fill="currentColor"></use>
     </svg>
 </template>
 
 <style scoped>
 
 </style>
+

@@ -21,8 +21,13 @@ export const routes = [
         component:() => import("@/views/_builtin/login/Modules/register.vue"),
       }
     ]
-  },{
+  },
+  {
     path:'/',
       redirect:'/login'
+  },
+  {
+    path:'/home',
+    component:() => import("@/views/_builtin/Home/index.vue"),
   }
 ]

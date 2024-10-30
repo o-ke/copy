@@ -3,5 +3,8 @@ export default defineConfig({
 
   transformers: [transformerDirectives(), transformerVariantGroup()],
   // ...UnoCSS options
-  presets: [presetUno(), presetAttributify()]
+  presets: [presetUno(), presetAttributify()],
+  shortcuts: {
+    'card-wrapper': 'rd-8px shadow-sm'
+  },
 })

@@ -13,13 +13,8 @@ import {
   NSpace, useMessage
 } from 'naive-ui'
 import {useRouter} from 'vue-router'
-import { ref,useAttrs } from 'vue'
-interface style{
-  width?:string
-  height?:string
-  display?:string
-}
-const $attrs:style= useAttrs()
+import { ref } from 'vue'
+
 const Router = useRouter()
 
 const formRef = ref<FormInst | null>(null)
@@ -55,6 +50,7 @@ function  handleValidateButtonClick(e: MouseEvent) {
   formRef.value?.validate((errors) => {
     if (!errors) {
       message.success('登录成功')
+      Router.push('/home')
     }
     else {
       console.log(errors)
@@ -82,8 +78,8 @@ const button = ref(false);
 
 <template>
 <!--原登录页-->
-  <h3 class="text-18px text-primary font-medium">密码登录</h3>
-  <div class="reactive pt-24px" >
+  <div class="md:relative relative md:bottom-0 md:right-0 pt-24px h-auto relative" >
+    <h3 class="text-18px text-primary font-medium">密码登录</h3>
     <NForm   ref="formRef" :model="model" :rules="rules" >
       <NFormItem path="userName">
         <NInput style="width: 100%" v-model:value="model.username" type="text" @keydown.enter.prevent />
@@ -111,7 +107,7 @@ const button = ref(false);
       </div>
       <NRow :gutter="[0, 24]">
         <NCol :span="24">
-          <div style="display: flex; justify-content: center" class="w-full">
+          <div style="display: flex; justify-content: center" class="w-full m-t-2vw m-b-2vw">
             <NButton
               round
               type="primary"

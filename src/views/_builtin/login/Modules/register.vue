@@ -44,8 +44,8 @@ function  handleValidateButtonClick(e: MouseEvent) {
 <template>
 <!--登录页-->
   <!--重置密码页-->
-  <h3 class="text-18px text-primary font-medium">重置密码</h3>
-  <div  class=" h-105 ">
+  <div  class=" h-auto relative md:relative md:bottom-0 md:right-0">
+    <h3 class="text-18px text-primary font-medium">重置密码</h3>
     <NForm :model="ModelValue" >
       <NFormItem path="phone">
         <NInput v-model:vlaue="ModelValue.phone" placeholder="请输入手机号"></NInput>

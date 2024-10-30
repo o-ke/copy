@@ -39,8 +39,9 @@ function  handleValidateButtonClick(e: MouseEvent) {
 
 <template>
 <!--验证吗登录页-->
-  <h3 class="text-18px text-primary font-medium">验证吗登录</h3>
-  <div  >
+    <div  class="h-auto relative md:relative md:bottom-0 md:right-0">
+    <h3 class="text-18px text-primary font-medium">验证码登录</h3>
+
     <NForm ref="forRef" size="large" :show-label="false"  :model="ModelValue">
       <NFormItem path="phone" >
         <NInput v-model:value="ModelValue.phone" placeholder="请输入手机号"></NInput>

@@ -8,10 +8,15 @@ import 'virtual:svg-icons-register'
 import { router } from '@/router'
 //svg插件
 import gloablComponent from '@/components/index';
+// import {setupLoading} from '@/plugins/loading'
 
-const app = createApp(App);
-app.use(router)
+async function SetUpApp(){
+  const app = createApp(App);
+  app.use(router)
 
-app.use(gloablComponent);
-app.use(createPinia())
-app.mount('#app')
+  // setupLoading();
+  app.use(gloablComponent);
+  app.use(createPinia())
+  app.mount('#app')
+}
+SetUpApp();

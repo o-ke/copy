@@ -42,6 +42,8 @@ function  handleValidateButtonClick(e: MouseEvent) {
   formRef.value?.validate((errors) => {
     if (!errors) {
       message.success('登录成功')
+      router.push("/home")
+      console.log()
     }
     else {
       console.log(errors)
@@ -53,8 +55,9 @@ function  handleValidateButtonClick(e: MouseEvent) {
 
 <template>
   <!--重置密码页-->
-  <h3 class="text-18px text-primary font-medium">重置密码</h3>
-   <div >
+   <div class="h-auto relative md:relative md:bottom-0 md:right-0">
+     <h3 class="text-18px text-primary font-medium">重置密码</h3>
+
      <NForm :model="ModelValue">
        <NFormItem path="phone">
          <NInput v-model:vlaue="ModelValue.phone" placeholder="请输入手机号"></NInput>
